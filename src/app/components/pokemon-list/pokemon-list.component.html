@@ -1,0 +1,10 @@
+<div class="pokemon-list">
+  <h2>Pokédex</h2>
+  <ul>
+    <li *ngFor="let pokemon of pokemons; let i = index">
+      <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (i + 1) + '.png'" 
+           alt="{{ pokemon.name }}" class="pokemon-image">
+      <a [routerLink]="['/pokemon', pokemon.name]">{{ pokemon.name | titlecase }}</a>
+    </li>
+  </ul>
+</div>

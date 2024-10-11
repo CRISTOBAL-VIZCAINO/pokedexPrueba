@@ -1,0 +1,20 @@
+<div *ngIf="pokemon" class="pokemon-detail">
+  <div class="pokemon-header">
+    <h2>{{ pokemon.name | titlecase }}</h2>
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+  </div>
+
+  <div class="pokemon-stats">
+    <p><strong>Height:</strong> {{ pokemon.height / 10 }} m</p> <!-- Convertimos a metros -->
+    <p><strong>Weight:</strong> {{ pokemon.weight / 10 }} kg</p> <!-- Convertimos a kg -->
+  </div>
+
+  <div class="pokemon-abilities">
+    <p><strong>Abilities:</strong></p>
+    <ul>
+      <li *ngFor="let ability of pokemon.abilities">
+        {{ ability.ability.name | titlecase }}
+      </li>
+    </ul>
+  </div>
+</div>
